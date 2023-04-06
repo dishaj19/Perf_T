@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "scenario1testplan"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+locust = "^2.15.1"
+pandas = "^2.0.0"
+openpyxl = "^3.1.2"
+self = "^2020.12.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
