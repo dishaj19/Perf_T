@@ -1,4 +1,3 @@
-
 from locust import HttpUser, task, TaskSet, SequentialTaskSet, constant, between
 import time
 import locust
@@ -24,9 +23,9 @@ class MyReq(SequentialTaskSet):
         print("ending time ", end)
         print("total time= ", (end - start))
 
-        with self.client.get("/#/airnets", catch_response=True) as response:
-            if response.data == "fail":
-            # raise ResponseError("Request failed")
+        # with self.client.get("/#/airnets", catch_response=True) as response:
+        # if response.data == "fail":
+        # raise ResponseError("Request failed")
 
         res3 = self.client.option()
         # response3 = self.client.get('http://10.91.28.85/#/airnets')
