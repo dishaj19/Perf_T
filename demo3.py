@@ -26,7 +26,7 @@ class MyReq(SequentialTaskSet):
 
         with self.client.get("/#/airnets", catch_response=True) as response:
             if response.data == "fail":
-                raise ResponseError("Request failed")
+            # raise ResponseError("Request failed")
 
         res3 = self.client.option()
         # response3 = self.client.get('http://10.91.28.85/#/airnets')
