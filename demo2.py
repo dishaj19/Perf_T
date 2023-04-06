@@ -32,6 +32,8 @@ class MyReq(SequentialTaskSet):
             print("post method status is", response2.status_code)
             print(f"DEBUG: login response.status_code = {response2.status_code}")
             # after logging status code
+            print(start)
+            print(end)
             print(end - start)
 
 
