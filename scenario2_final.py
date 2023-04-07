@@ -7,7 +7,7 @@ class MyReq(SequentialTaskSet):
     def on_start(self):
         self.login()
 
-    @task
+    @task()
     def login(self):
         wb = openpyxl.load_workbook("scenario2ID1111.xlsx")
         sh = wb.active
@@ -39,4 +39,3 @@ class MySeq(HttpUser):
     wait_time = between(1, 10)
     host = "http://10.91.28.85"
     tasks = [MyReq]
-
