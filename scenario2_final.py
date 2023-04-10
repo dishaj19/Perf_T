@@ -20,9 +20,11 @@ class MyReq(SequentialTaskSet):
             for j in range(1, sh.max_column + 1):
                 cell_obj = sh.cell(row=i, column=j)
                 print(cell_obj.value, end=" ")
+
                 start = time.time()
                 response1 = self.client.get('/')
                 print("get method status is", response1.status_code)
+
                 csrf_token = response1.cookies['csrftoken']
                 response2 = self.client.post('/', {'username': i, 'password': j},
                                              headers={'X-CSRFToken': csrf_token})
@@ -36,6 +38,6 @@ class MyReq(SequentialTaskSet):
 
 
 class MySeq(HttpUser):
-    wait_time = between(1, 10)
+    wait_time = between(1, 5)
     host = "http://10.91.28.85"
     tasks = [MyReq]
